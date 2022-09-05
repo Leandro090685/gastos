@@ -11,12 +11,7 @@ class Conect:
         
         return conn
     
-    def conectar_csv(self,modo):
-        f = open("registros.csv",{modo})
-        f.close()
 
-a = Conect()
-a.conectar_csv(a)
         
         
        
