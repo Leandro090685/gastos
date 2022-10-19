@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gastos.apps.GastosConfig',
+    'bootstrap_datepicker_plus',
+    'bootstrap4',
+    'crispy_forms'
     
 ]
 
