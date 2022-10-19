@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Gastos</title>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center">Gastos</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Rubro</th>
+              <th>Descripcion</th>
+              <th>Importe</th>
+              <th colspan="2">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for gastos in gastos %}
+            <tr>
+                <td>{{gastos.id}}</td>
+                <td>{{gastos.fecha}}</td>
+                <td>{{gastos.rubro}}</td>
+                <td>{{gastos.descripcion}}</td>
+                <td>$ {{gastos.importe}}</td>
+                <td><a href="eliminar_gasto/{{gastos.id}}">Eliminar</a></td>
+            </tr>
+            {%endfor%}
+            <tr>
+                <td>Total gastos: ${{total.total_importe}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    
+      <a style= "margin:25px" href="{% url 'nuevo_gasto' %}" class="btn btn-outline-dark">Añadir gasto</a>
+    <a href="{% url 'index' %}" class="btn btn-outline-dark">Volver al inicio</a>
+      
+    
+</body>
+</html>
